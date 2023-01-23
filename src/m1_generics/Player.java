@@ -11,4 +11,11 @@ public abstract class Player {//im gonna create my  custom class
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
