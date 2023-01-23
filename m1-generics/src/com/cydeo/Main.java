@@ -1,7 +1,5 @@
 package com.cydeo;
 
-import m1_generics.Team;
-
 import java.util.ArrayList;
 
 public class Main {
