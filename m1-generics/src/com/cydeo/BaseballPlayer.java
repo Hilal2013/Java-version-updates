@@ -1,6 +1,6 @@
-package m1_generics;
+package com.cydeo;
 
-public class BaseballPlayer extends Player{
+public class BaseballPlayer extends Player {
 
 
     public BaseballPlayer(String name) {

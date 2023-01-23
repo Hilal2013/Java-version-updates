@@ -1,4 +1,6 @@
-package m1_generics;
+package com.cydeo;
+
+import m1_generics.Team;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package m1_generics;
+package com.cydeo;
 
 public abstract class Player {//im gonna create my  custom class
 // main purpose of putting abstract//im not gonna create object
