@@ -2,22 +2,8 @@ package com.cydeo.tasks;
 
 public final class Algorithm {
 
-    public static  <T> T  max(T x, T y) {
+    public static  <T> T  max(T x, T y) {//generics doesnt accept primitive types
 
-        return  (Integer)x >(Integer) y ? x : y;
+        return  (Integer)x >(Integer) y ? x : y;//we can use < or > for non primitive numbers
     }
 }
-/*
-Will the following class compile? If not, why?
-public final class Algorithm {
- public static <T> T max(T x, T y) {
-
- return x > y ? x : y;
- }
-}
-
-    public static  <T> T  max(T x, T y) {
-
-        return
-    }
- */
