@@ -2,9 +2,10 @@ package com.cydeo.tasks;
 
 import java.util.Arrays;
 
-public class Swap {
+public class SwapValues {
 
     public static void main(String[] args) {
+        //I can use string array through generics//more dynamic
         Integer[] a = {1,2,3,4};
         swap(a,0,2);
         System.out.println(Arrays.toString(a)); //[3,2,1,4]
