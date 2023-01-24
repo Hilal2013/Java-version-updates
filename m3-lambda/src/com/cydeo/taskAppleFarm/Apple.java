@@ -1,12 +1,11 @@
 package com.cydeo.taskAppleFarm;
 
-
 public class Apple {
     //private String color;//color is a constant
     private Color color;
  //   private double heavy;
 private int weight;
-    public Apple(Color color, int weighy) {
+    public Apple(int weight,Color color) {
         this.color = color;
         this.weight = weight;
     }
