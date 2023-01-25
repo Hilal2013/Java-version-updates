@@ -11,7 +11,7 @@ public class MemberTest {
         Member member1 = new Member("Mary", 30, Gender.FEMALE);
         Member member2 = new Member("John", 20, Gender.MALE);
         Member member3 = new Member("Julia", 19, Gender.FEMALE);
-        Member member4 = new Member("Mike", 32, Gender.FEMALE);
+        Member member4 = new Member("Mike", 32, Gender.MALE);
         Member member5 = new Member("David", 18, Gender.MALE);
         list.addAll(Arrays.asList(member1, member2, member3, member4, member5));
         System.out.println(list);
