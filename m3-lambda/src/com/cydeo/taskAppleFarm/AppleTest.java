@@ -53,7 +53,7 @@ public class AppleTest {
         }
         return result;
     }
-    public static void prettyPrintApple(List<Apple> inventory,PrettyAppleFunction prettyApple){
+    private static void prettyPrintApple(List<Apple> inventory,PrettyAppleFunction prettyApple){
 
         for(Apple apple : inventory){
 String output= prettyApple.test(apple);
