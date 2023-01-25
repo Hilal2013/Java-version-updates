@@ -10,6 +10,18 @@ public class AppleTest {
         inventory.add(new Apple(100,Color.RED));
         inventory.add(new Apple(200,Color.GREEN));
         inventory.add(new Apple(50,Color.RED));
+        inventory.add(new Apple(80,Color.YELLOW));
+        inventory.add(new Apple(120,Color.YELLOW));
+
+        prettyPrintApple(inventory,apple->"An apple of "+ apple.getWeight()+"g");
+        //An apple of 300g ...
+
+        PrettyAppleFunction prettyAppleMix=apple -> {
+            if(apple.getWeight()>100){return "A Heavy "+ apple.getColor()+ " apple";}
+            else{return"A Light "+ apple.getColor()+" apple";}
+        };
+        prettyPrintApple(inventory,prettyAppleMix);
+        //A Heavy GREEN apple //A Light RED apple.....
         System.out.println(inventory);
       //  [Apple{color=GREEN, weight=300}, Apple{color=RED, weight=100}, Apple{color=GREEN, weight=200}, Apple{color=RED, weight=50}]
         AppleHeavyPredicate abc = new AppleHeavyPredicate();
@@ -42,5 +54,14 @@ public class AppleTest {
         }
         return result;
     }
+    public static void prettyPrintApple(List<Apple> inventory,PrettyAppleFunction prettyApple){
+
+        for(Apple apple : inventory){
+String output= prettyApple.test(apple);
+            System.out.println(output);
+        }
+
+
+}
 
 }
