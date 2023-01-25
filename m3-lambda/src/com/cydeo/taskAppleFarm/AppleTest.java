@@ -15,7 +15,6 @@ public class AppleTest {
 
         prettyPrintApple(inventory,apple->"An apple of "+ apple.getWeight()+"g");
         //An apple of 300g ...
-
         PrettyAppleFunction prettyAppleMix=apple -> {
             if(apple.getWeight()>100){return "A Heavy "+ apple.getColor()+ " apple";}
             else{return"A Light "+ apple.getColor()+" apple";}
