@@ -22,7 +22,10 @@ public class AppleTest {
         prettyPrintApple(inventory,prettyAppleMix);
         //A Heavy GREEN apple //A Light RED apple.....
         System.out.println(inventory);
+
       //  [Apple{color=GREEN, weight=300}, Apple{color=RED, weight=100}, Apple{color=GREEN, weight=200}, Apple{color=RED, weight=50}]
+        inventory.forEach(apple -> System.out.println(apple));
+
         AppleHeavyPredicate abc = new AppleHeavyPredicate();
         List<Apple> heavyApple=filterApples(inventory,abc);
         System.out.println(heavyApple);//[Apple{color=GREEN, weight=300}]
