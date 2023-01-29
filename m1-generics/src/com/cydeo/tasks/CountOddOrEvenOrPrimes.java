@@ -10,6 +10,8 @@ public class CountOddOrEvenOrPrimes {
         System.out.println("Number of odd integers = "+count);//Number of odd integers = 4
         System.out.println(countIf(list,new EvenPredicate()));//3
         System.out.println(countIf(list,new PrimePredicate()));//3
+
+
     }
 
     //i need integerit wont change so  why i need generic I can have different classes find prime find even numbers

@@ -41,8 +41,8 @@ public class AppleTest {
         //or Type Inference// we can remove Apple(type)
         ApplePredicate weightApple1 = apple -> apple.getWeight()>200;
 
-       // System.out.println(filterApples(apple-> apple.getColor().equals(Color.GREEN)));
-
+        System.out.println(filterApples(inventory,apple-> apple.getColor().equals(Color.GREEN)));
+//[Apple{color=GREEN, weight=300}, Apple{color=GREEN, weight=200}]
 
     }
     private static List<Apple> filterApples(List<Apple> inventory,ApplePredicate applePredicate){
