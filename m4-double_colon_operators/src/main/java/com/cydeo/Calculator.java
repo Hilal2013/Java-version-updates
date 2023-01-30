@@ -3,9 +3,6 @@ package com.cydeo;
 import java.security.spec.RSAOtherPrimeInfo;
 
 public class Calculator {
-
-
-
     public static void findSum(int x, int y){//it is accepting print sum//result
         System.out.println("Sum= "+(x+y));
     }
@@ -13,5 +10,4 @@ public class Calculator {
         System.out.println("Multiply= "+(x*y));
 
     }
-
 }

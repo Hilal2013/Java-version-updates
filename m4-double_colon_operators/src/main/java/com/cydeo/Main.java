@@ -1,6 +1,7 @@
 package com.cydeo;
 
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -41,6 +42,10 @@ BiFunction<MyClass,Integer,Double> b1=MyClass :: method;
 //if you have functional inteface //and accepting class as a parameter no need new
 //im already mentioning my class so no need new myClass
         //like String class we dont need object
+
+        Consumer<Integer> display=i-> System.out.println(i);
+        //out is static//creates a new object print stream
+        Consumer<Integer> display1=System.out::println;
 
 
 
