@@ -1,5 +1,6 @@
 package com.cydeo;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,24 +22,29 @@ public class AppleTest {
         Comparator<Apple> sortApple = comparing((Apple apple) -> apple.getWeight());
         inventory.sort(sortApple);
         System.out.println(inventory);
-        //through method reference
+        System.out.println("Method Reference");
+        //through method reference//// we know Apple make simplifier no need Apple
         Comparator<Apple> sortApple1 = comparing(Apple::getWeight);
         inventory.sort(sortApple1);
         System.out.println(inventory);
         inventory.sort(comparing(Apple::getWeight));
         System.out.println(inventory);
-
+//[Apple(weight=50, color=RED), Apple(weight=80, color=YELLOW),
         //   Collections.sort(inventory,sortApple1);
         //  System.out.println(inventory);
-// we know Apple make simplifier
      //   Comparator<Apple> sortApple = comparing((Apple apple) -> apple.getWeight());//it gives eror
         //this static method how ca we do without calling class //make static import
         Comparator<Apple> sortApple2= comparing((Apple apple) -> apple.getWeight());
        // before Comparator.compare now (afterimport static) no need Comparator.
-
-        //Do I need Apple ->no
-
-
+        System.out.println("Reversed");
+        inventory.sort(comparing(Apple::getWeight).reversed());//it wil give reversed order
+        System.out.println(inventory);
+//[Apple(weight=300, color=GREEN), Apple(weight=200, color=GREEN)....
+        System.out.println("Chaining");
+        inventory
+                .sort(comparing(Apple::getWeight)
+                        .reversed()
+                        .thenComparing(Apple::getColor));
 
     }
 }
