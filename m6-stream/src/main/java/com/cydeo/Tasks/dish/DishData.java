@@ -7,7 +7,7 @@ public class DishData {
 
 
 
-    public static List<Dish> getAll(){
+    public static List<Dish> getAll(){//return as list
         return Arrays.asList(
                 new Dish("chicken",false,400,Type.MEAT),
                 new Dish("fries",true,530,Type.OTHER),

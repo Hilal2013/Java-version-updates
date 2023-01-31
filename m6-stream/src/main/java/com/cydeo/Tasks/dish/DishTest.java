@@ -7,14 +7,13 @@ import java.util.List;
 public class DishTest {
     public static void main(String[] args) {
 
-//Print all dish’s name that has less than 400 calories
         System.out.println("Print all dish’s name that has less than 400 calories");
         DishData.getAll().stream()
                 .filter(each->each.getCalories()<400)
                 .map(Dish::getName)
                // .map(each->each.getName())
                 .forEach(System.out::println);//rice //fruit //prawns
- //Print the length of the name of each dish
+
         System.out.println("Print the length of the name of each dish");
         DishData.getAll().stream()
                 .map(each->each.getName().length())
@@ -34,8 +33,8 @@ public class DishTest {
         System.out.println("Print all dish name that are below 400 calories in sorted");
          DishData.getAll().stream()
                 .filter(each->each.getCalories()<400)
+                 //  .sorted(Comparator.comparing(each->each.getCalories())
                 .sorted(Comparator.comparing(Dish::getCalories).reversed())
-              //  .sorted(Comparator.comparing(each->each.getCalories())
                  .map(Dish::getName)
                 .forEach(System.out::println);//rice prawns fruit
 
