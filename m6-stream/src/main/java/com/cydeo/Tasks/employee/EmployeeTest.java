@@ -1,5 +1,7 @@
 package com.cydeo.Tasks.employee;
 
+import java.util.List;
+
 public class EmployeeTest {
     public static void main(String[] args) {
         //now no need EmployeeData.stream()//because returns Stream
@@ -33,5 +35,10 @@ public class EmployeeTest {
         //45678912
         //98765432
 
+        System.out.println("Print All Phone numbers with double colon");
+        EmployeeData.readAll()
+                .map(Employee::getEmpPhoneNumbers)//stream
+                .flatMap(List:: stream)
+                .forEach(System.out::println);
     }
 }
