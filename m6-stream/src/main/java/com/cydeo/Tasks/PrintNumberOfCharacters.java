@@ -9,6 +9,8 @@ public class PrintNumberOfCharacters {
 
         words.stream()
                 .map(word->word.length())
+               // .map(String::length)
+           //   .forEach(each-> System.out.println(each));
                 .forEach(System.out::println);
 
 

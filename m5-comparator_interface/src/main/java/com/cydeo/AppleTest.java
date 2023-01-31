@@ -45,6 +45,7 @@ public class AppleTest {
                 .sort(comparing(Apple::getWeight)
                         .reversed()
                         .thenComparing(Apple::getColor));
+        System.out.println(inventory);
 
     }
 }
