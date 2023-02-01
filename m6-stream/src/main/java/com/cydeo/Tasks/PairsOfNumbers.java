@@ -2,17 +2,19 @@ package com.cydeo.Tasks;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PairsOfNumbers {
     public static void main(String[] args) {
-        List<Integer> numbers1 = Arrays.asList(1,2,3,4,5);
+        List<Integer> numbers = Arrays.asList(1,2,3,4,5);
+        List<Integer> numbers1 = Arrays.asList(1,2,3);
         List<Integer> numbers2 = Arrays.asList(3,4);
 //Task 1
         System.out.println("return a list of the square of each number");
-//numbers1.stream()
-       // .map(each->each*2)
-      //  .forEach(System);
-
+numbers= numbers.stream()
+        .map(each->each*each)
+        .collect(Collectors.toList());
+       System.out.println(numbers);//[1, 4, 9, 16, 25]
     }
 }
 /*

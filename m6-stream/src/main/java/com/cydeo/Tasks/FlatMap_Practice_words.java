@@ -14,19 +14,13 @@ public class FlatMap_Practice_words {
 
         System.out.println();
         System.out.println("remove duplicates chars use flatMap and distinct");
-        Arrays.stream(words)
-                .map(w -> w.split(" "))
-                .flatMap(Arrays::stream)
-                .distinct()
-                .forEach(System.out::print);//HelloWorld
-
 List<String> listWords=Arrays.asList(str);
         System.out.println(listWords);
-        listWords.stream()
-                .map(w -> w.split(" "))
+  List<String>   list=   listWords.stream()
+                .map(w -> w.split(""))
                 .flatMap(Arrays::stream)
                 .distinct()
-                .collect(Collectors.toList());
-
+                .collect(Collectors.toList());//[H, e, l, o,  , W, r, d]
+        System.out.println(list);
     }
 }
