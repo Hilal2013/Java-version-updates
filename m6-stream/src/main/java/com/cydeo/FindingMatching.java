@@ -62,6 +62,10 @@ public class FindingMatching {
                 .max(Comparator.comparing(Dish::getCalories));//it sorts and gives min
         System.out.println(dmax.get());//Dish(name=pork, vegetarian=false, calories=800, type=MEAT)
 
+        System.out.println("Count");//it is returning long
+        long dishCount=DishData.getAll().stream().count();
+        System.out.println(dishCount);
+
     }
 
 }
