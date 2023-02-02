@@ -23,8 +23,6 @@ public class DataGenerator {
                 new Transaction(alan, 2012, 950)
         );
 
-        List<Trader> traders = Arrays.asList(raoul, mario, alan, brian);
-
 //1.Find all transactions in the year 2011 and sort them by value(small to high)
         System.out.println("1.Find all transactions in the year 2011 and sort them by value(small to high)");
         transactions.stream()
@@ -38,36 +36,40 @@ public class DataGenerator {
         System.out.println("2. What are all the unique cities where the traders work?");
 
         System.out.println("First solution");
-        traders.stream()
-                .map(Trader::getCity)
+        transactions.stream()
+                .map(each->each.getTrader().getCity())
                 .distinct()
                 .forEach(System.out::println);//Cambridge //Milan
         System.out.println("Second solution");
-        Set<String> setCities = traders.stream()
-                .map(Trader::getCity)
+        Set<String> setCities = transactions.stream()
+                .map(each->each.getTrader().getCity())
                 .collect(Collectors.toSet());
         System.out.println(setCities);//[Milan, Cambridge]
 
         //3. Find all traders from Cambridge and sort them by name.
         System.out.println("3.Find all traders from Cambridge and sort them by name?");
 
-        traders.stream()
+        transactions.stream()
+                .map(Transaction::getTrader)
                 .filter(trader->trader.getCity().equalsIgnoreCase("Cambridge"))
                 .sorted(Comparator.comparing(Trader::getName))
+                .distinct()
                 .forEach(System.out::println);
         //Trader{name='Alan', city='Cambridge'}
         //Trader{name='Brian', city='Cambridge'}
         //Trader{name='Raoul', city='Cambridge'}
+       // Trader{name='Raoul', city='Cambridge'}?????
         System.out.println("4. Return a string of all traders’ names sorted alphabetically?");
-        String sortedNAmes= traders.stream()
-                .map(Trader::getName)
+        String sortedNAmes= transactions.stream()
+                .map(each->each.getTrader().getName())
                 .sorted()
+                .distinct()
                 .collect(Collectors.joining(","));
         System.out.println(sortedNAmes);//Alan,Brian,Mario,Raoul
         System.out.println("5. Are any traders based in Milan?");
 
-       boolean anyMatch= traders.stream()
-                       .anyMatch(trader->trader.getCity().equalsIgnoreCase("Milan"));
+       boolean anyMatch= transactions.stream()
+                       .anyMatch(each->each.getTrader().getCity().equalsIgnoreCase("Milan"));
         System.out.println(anyMatch);//true
 
         System.out.println("6.Print the values of all transactions from the traders living in Cambridge?");
@@ -83,6 +85,13 @@ public class DataGenerator {
         Optional<Transaction> max=   transactions.stream()
                 .max(Comparator.comparing(Transaction::getValue));
         System.out.println(max.get());
+       // Transaction{trader=Trader{name='Raoul', city='Cambridge'}, year=2012, value=1000}
+        System.out.println("Second Solution");
+        Optional<Integer> max1 =
+                transactions.stream()
+                        .map(Transaction::getValue)
+                        .reduce(Integer::max);
+        System.out.println(max1.get());//1000
 
         System.out.println("8. Find the transaction with the smallest value?");
 
