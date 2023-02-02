@@ -1,5 +1,6 @@
 package com.cydeo.Tasks;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +16,14 @@ numbers= numbers.stream()
         .map(each->each*each)
         .collect(Collectors.toList());
        System.out.println(numbers);//[1, 4, 9, 16, 25]
+        //Task2
+//first solution
+        List<int[]> pairs =
+                numbers1.stream()
+                .flatMap(i->numbers2.stream()
+                        .map(j->new int[]{i,j}))
+                        .collect(Collectors.toList());
+        System.out.println(pairs);
     }
 }
 /*

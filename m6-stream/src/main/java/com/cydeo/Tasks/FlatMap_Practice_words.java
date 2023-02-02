@@ -17,7 +17,7 @@ public class FlatMap_Practice_words {
 List<String> listWords=Arrays.asList(str);
         System.out.println(listWords);
   List<String>   list=   listWords.stream()
-                .map(w -> w.split(""))
+                .map(w -> w.split(" "))
                 .flatMap(Arrays::stream)
                 .distinct()
                 .collect(Collectors.toList());//[H, e, l, o,  , W, r, d]
