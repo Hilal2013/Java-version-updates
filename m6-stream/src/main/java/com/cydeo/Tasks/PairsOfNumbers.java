@@ -24,6 +24,7 @@ numbers= numbers.stream()
                         .map(j->new int[]{i,j}))
                         .collect(Collectors.toList());
         System.out.println(pairs);
+     //[[I@6e8dacdf, [I@7a79be86, [I@34ce8af7, [I@b684286, [I@880ec60, [I@3f3afe78]???
     }
 }
 /*
