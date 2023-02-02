@@ -27,7 +27,6 @@ public class DataGenerator {
         System.out.println("1.Find all transactions in the year 2011 and sort them by value(small to high)");
         transactions.stream()
                 .filter(each -> each.getYear() == 2011)
-                // .map(each->each.getValue())
                 .sorted(Comparator.comparing(Transaction::getValue).reversed())//high to small
                 .forEach(System.out::println);
         //Transaction{trader=Trader{name='Raoul', city='Cambridge'}, year=2011, value=400}
@@ -58,7 +57,7 @@ public class DataGenerator {
         //Trader{name='Alan', city='Cambridge'}
         //Trader{name='Brian', city='Cambridge'}
         //Trader{name='Raoul', city='Cambridge'}
-       // Trader{name='Raoul', city='Cambridge'}?????
+
         System.out.println("4. Return a string of all traders’ names sorted alphabetically?");
         String sortedNAmes= transactions.stream()
                 .map(each->each.getTrader().getName())
