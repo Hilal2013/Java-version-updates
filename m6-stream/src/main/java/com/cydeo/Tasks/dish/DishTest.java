@@ -37,9 +37,17 @@ public class DishTest {
                 .sorted(Comparator.comparing(Dish::getCalories).reversed())
                  .map(Dish::getName)
                 .forEach(System.out::println);//rice prawns fruit
+//Task:How would you count the number of dishes in a stream using the map
+//and reduce methods
 
+        long countDishes=DishData.getAll().stream()
+        .count();
+        System.out.println(countDishes);
+      int   countDishes1= DishData.getAll().stream()
+                .map(each -> 1)//her bir obje 1se
+                       // .forEach(System.out::println);1 1 1 1...
+             .reduce(0, (a, b) -> a + b);
 
-
-
+        System.out.println(countDishes1);//9
     }
 }
