@@ -18,13 +18,21 @@ numbers= numbers.stream()
        System.out.println(numbers);//[1, 4, 9, 16, 25]
         //Task2
 //first solution
-        List<int[]> pairs =
-                numbers1.stream()
-                .flatMap(i->numbers2.stream()
-                        .map(j->new int[]{i,j}))
-                        .collect(Collectors.toList());
+        List<List<Integer>> pairs = numbers1.stream()
+                .flatMap(i -> numbers2.stream()
+                        .map(j -> Arrays.asList(i,j)))
+                .collect(Collectors.toList());
         System.out.println(pairs);
-     //[[I@6e8dacdf, [I@7a79be86, [I@34ce8af7, [I@b684286, [I@880ec60, [I@3f3afe78]???
+
+        System.out.println("-------------------------------------------------------");
+
+        List<int[]> pair = numbers1.stream()
+                .flatMap(i -> numbers2.stream()
+                        .map(j -> new int[]{i, j}))
+                .collect(Collectors.toList());
+        pair.forEach(i -> {
+            System.out.println(Arrays.toString(i));
+        });
     }
 }
 /*

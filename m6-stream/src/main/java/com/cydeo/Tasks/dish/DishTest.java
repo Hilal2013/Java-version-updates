@@ -42,9 +42,10 @@ public class DishTest {
 
         long countDishes=DishData.getAll().stream()
         .count();
-        System.out.println(countDishes);
+
+        System.out.println(countDishes);//9
       int   countDishes1= DishData.getAll().stream()
-                .map(each -> 1)//her bir obje 1se
+                .map(each -> 1)
                        // .forEach(System.out::println);1 1 1 1...
              .reduce(0, (a, b) -> a + b);
 
