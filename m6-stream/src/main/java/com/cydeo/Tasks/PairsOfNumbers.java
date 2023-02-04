@@ -16,6 +16,7 @@ numbers= numbers.stream()
         .map(each->each*each)
         .collect(Collectors.toList());
        System.out.println(numbers);//[1, 4, 9, 16, 25]
+
         //Task2
 //first solution
         List<List<Integer>> pairs = numbers1.stream()
