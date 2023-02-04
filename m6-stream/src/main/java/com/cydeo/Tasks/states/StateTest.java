@@ -6,7 +6,26 @@ import java.util.List;
 
 public class StateTest {
     public static void main(String[] args) {
-        State state1 = new State();
+
+
+     StateData.getAllCities().stream()
+            // .map(State::getCities)
+             //.flatMap(city-> city.stream())
+               // .flatMap(List::stream)
+             .flatMap(city-> city.getCities().stream())
+                .forEach(System.out::println);
+//forloop withoutStream
+        System.out.println("forLoop");
+        for (State state : StateData.getAllCities()) {
+            for(String city:state.getCities()){
+                System.out.println(city);
+            }
+        }
+
+    }
+}
+/*
+ State state1 = new State();
         state1.addCity("Nashville");
         state1.addCity("New York");
         state1.addCity("Los Angelos");
@@ -26,17 +45,4 @@ public class StateTest {
         state3.addCity("ngelos");
         state3.addCity("do");
         state3.addCity("s");
-
-        List<State> states = Arrays.asList(state1, state2, state3);
-        states.stream()
-                .map(State::getCities)
-                .flatMap(List::stream)
-                .forEach(System.out::println);
-
-        for (State state : states) {
-            for(String city: state.getCities()){
-                System.out.println(city);
-            }
-        }
-    }
-}
+ */
