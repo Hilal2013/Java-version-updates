@@ -1,6 +1,9 @@
 package com.cydeo.Tasks.employee;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeTest {
     public static void main(String[] args) {
@@ -40,5 +43,15 @@ public class EmployeeTest {
                 .map(Employee::getEmpPhoneNumbers)//stream
                 .flatMap(List:: stream)
                 .forEach(System.out::println);
+
+        Map<String,String> map=EmployeeData.readAll()
+                .collect(Collectors.toMap(first->first.getEmpName().substring(0,1),last->last.getEmpEmail().substring(0,1)));
+        System.out.println(map);
+List<String> list=new ArrayList<>();
+
+        for (Map.Entry<String, String> eachPair : map.entrySet()) {
+            list.add(eachPair.getKey()+eachPair.getValue());
+        }
+
     }
 }

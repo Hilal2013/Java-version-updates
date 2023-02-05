@@ -103,6 +103,7 @@ public class DataGenerator {
                 .map(Transaction::getValue)
                 .sorted()
                 .limit(1)
+               // .findFirst()
                 .forEach(System.out::println);//300
 
 
