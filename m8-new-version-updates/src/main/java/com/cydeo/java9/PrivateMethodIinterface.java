@@ -10,7 +10,6 @@ public interface PrivateMethodIinterface {
         validate(date);
         return !isHoliday(date);
     }
-
     default LocalDate nextDay(LocalDate date){
         validate(date);
         LocalDate nextDate = date.plusDays(1);

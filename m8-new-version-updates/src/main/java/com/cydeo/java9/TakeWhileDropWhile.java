@@ -29,6 +29,11 @@ public class TakeWhileDropWhile {
         return stocks.stream()
                 .peek(stock -> System.out.println("Filter proccessing : " + stock))
                 .filter(TakeWhileDropWhile::isStockLessThanFiveHundred)
+                //we call method for implementation of the lambda expression
+                //filter is taking predicate.there is some method is gonna give me
+                // the implementation of the predicate
+           //we are not writing //they abstracted//why can we do this one?
+              //we can use this method on different places as well
                 .map(Stock::getName)
                 .collect(Collectors.toList());
     }
@@ -37,6 +42,7 @@ public class TakeWhileDropWhile {
         return stocks.stream()
                 .peek(stock -> System.out.println("takeWhile proccessing : " + stock))
                 .takeWhile(TakeWhileDropWhile::isStockLessThanFiveHundred)
+
                 .map(Stock::getName)
                 .collect(Collectors.toList());
     }
@@ -51,6 +57,7 @@ public class TakeWhileDropWhile {
 
     public static boolean isStockLessThanFiveHundred(Stock stock){
         return stock.getValue().compareTo(BigDecimal.valueOf(500))<=0;
+        //means -1 ascending
     }
 
     private static List<Stock> getStocks(){
