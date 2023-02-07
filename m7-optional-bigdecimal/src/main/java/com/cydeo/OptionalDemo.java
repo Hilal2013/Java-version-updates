@@ -1,5 +1,8 @@
 package com.cydeo;
 
+import com.cydeo.java9.FactoryMethodDemo;
+
+import java.nio.channels.OverlappingFileLockException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +44,8 @@ public class OptionalDemo {
         System.out.println(evenIntOptional.orElse(0));
 
 
-      //  FactoryMethodsDemo f1 = new FactoryMethodsDemo();
+        FactoryMethodDemo f1=new FactoryMethodDemo();//no error
+   //   Apple a=new Apple();//complining because we didnt add export
 
     }
 
