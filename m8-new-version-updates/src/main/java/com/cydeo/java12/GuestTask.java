@@ -25,6 +25,8 @@ public class GuestTask {
 //EventParticipation{guestNameList=[Marco, Roger], totalNumberOfParticipants=9}
 
 
+
+
         //try without teeing  with stream
 
     }
